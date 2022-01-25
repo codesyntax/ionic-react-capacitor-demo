@@ -8,7 +8,7 @@ import {
 } from "ionicons/icons";
 const FabButton: React.FC = () => {
   return (
-    <IonFab vertical="bottom" horizontal="start" slot="fixed">
+    <IonFab vertical="bottom" horizontal="end" slot="fixed">
       <IonFabButton  color="light"  mode="ios">
         <IonIcon icon={shareOutline} />
       </IonFabButton>
@@ -22,8 +22,10 @@ const FabButton: React.FC = () => {
         <IonFabButton color="dark">
           <IonIcon icon={logoInstagram} />
         </IonFabButton>
+        <IonFabButton color="dark">
+          <IonIcon icon={logoTwitter} />
+        </IonFabButton>
       </IonFabList>
-    
     </IonFab>
   );
 };
