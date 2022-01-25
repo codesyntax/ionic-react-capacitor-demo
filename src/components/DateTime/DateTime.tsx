@@ -24,7 +24,7 @@ const DateTime: React.FC = () => {
           <IonContent>
             <IonDatetime
               size="cover"
-              locale="ca"
+              locale="eu"
               onIonChange={(e: CustomEvent) => setDateTime(e.detail.value)}
             >
               <div slot="time-label">Ordua</div>

@@ -7,6 +7,7 @@ import {
 } from "@ionic/react";
 import Accordion from "../components/Accordion/Accordion";
 import DateTime from "../components/DateTime/DateTime";
+import FabButton from "../components/FabButton/FabButton";
 import Reorder from "../components/Reorder/Reorder";
 import "./Tab2.css";
 
@@ -25,6 +26,7 @@ const Tab2: React.FC = () => {
         <DateTime />
         <Reorder />
         <Accordion />
+        <FabButton />
       </IonContent>
     </IonPage>
   );
