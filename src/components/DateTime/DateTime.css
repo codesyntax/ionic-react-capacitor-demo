@@ -1,0 +1,20 @@
+.date-time-modal ion-datetime {
+    height: auto;
+    width: auto;
+    max-width: 350px;
+  }
+
+  ion-modal.date-time-modal {
+    --width: 290px;
+    --height: 382px;
+    --border-radius: 8px;
+  }
+
+  ion-modal.date-time-modal ion-datetime {
+    height: 382px;
+  }
+
+  ion-modal.date-time-modal + ion-popover{
+    --offset-y: 330px !important;
+    --offset-x: 50px;
+  }
