@@ -1,0 +1,38 @@
+.map {
+    width: 100%;
+    height: 100%;
+}
+
+
+.leaflet-touch .leaflet-control-layers,
+.leaflet-touch .leaflet-bar {
+    border: 0px;
+}
+
+.leaflet-touch .leaflet-bar a:first-child {
+    margin-bottom: 10px;
+}
+.leaflet-touch .leaflet-bar a {
+    width: 40px;
+    height: 40px;
+    line-height: 39px;
+    border-radius: 50% !important;
+    background-color: var(--ion-color-light);
+    color: var(--ion-color-dark);
+}
+
+.leaflet-container .leaflet-control-attribution{
+    background-color: var(--ion-color-light);
+    color: var(--ion-color-dark);
+    border-top-left-radius: 5px;
+    /* padding: 10px; */
+    font-size: 12px;
+}
+.leaflet-container .leaflet-control-attribution a{
+    color: var(--ion-color-primary);
+}
+.map-fab-bottom {
+    bottom: 25px;
+}
+
+

@@ -1,0 +1,7 @@
+{
+  "name": "ionic-react-leaflet-demo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
