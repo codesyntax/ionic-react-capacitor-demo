@@ -1,12 +1,13 @@
 import {
   IonAccordion,
   IonAccordionGroup,
+  IonIcon,
   IonItem,
   IonLabel,
   IonList,
   IonListHeader,
 } from "@ionic/react";
-
+import {ellipse, triangle, square} from "ionicons/icons";
 const Accordion: React.FC = () => {
   return (
     <>
@@ -22,12 +23,17 @@ const Accordion: React.FC = () => {
           <IonList slot="content">
             <IonItem>
               <IonLabel>Red</IonLabel>
+            <IonIcon icon={ellipse} slot="start" color="danger"/>
             </IonItem>
             <IonItem>
               <IonLabel>Green</IonLabel>
+            <IonIcon icon={ellipse} slot="start" color="success"/>
+
             </IonItem>
             <IonItem>
               <IonLabel>Blue</IonLabel>
+            <IonIcon icon={ellipse} slot="start" color="primary"/>
+
             </IonItem>
           </IonList>
         </IonAccordion>
@@ -39,12 +45,16 @@ const Accordion: React.FC = () => {
           <IonList slot="content">
             <IonItem>
               <IonLabel>Circle</IonLabel>
+            <IonIcon icon={ellipse} slot="start"/>
             </IonItem>
             <IonItem>
               <IonLabel>Triangle</IonLabel>
+            <IonIcon icon={triangle} slot="start"/>
+
             </IonItem>
             <IonItem>
               <IonLabel>Square</IonLabel>
+            <IonIcon icon={square} slot="start"/>
             </IonItem>
           </IonList>
         </IonAccordion>

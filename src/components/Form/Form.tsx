@@ -18,7 +18,7 @@ const FabButton: React.FC = () => {
             autofocus
           ></IonInput>
         </IonItem>
-        <IonItem>
+        <IonItem fill="outline" mode="md" className="ion-margin-top">
             <IonLabel>Popover</IonLabel>
             <IonSelect
               interface="popover"
