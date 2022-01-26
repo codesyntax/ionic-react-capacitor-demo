@@ -2,7 +2,6 @@ import {
   Camera,
   CameraResultType,
   CameraSource,
-  Photo,
 } from "@capacitor/camera";
 import { useState } from "react";
 export interface UserPhoto {
@@ -20,7 +19,7 @@ export function usePhotoGallery() {
     });
 
     const fileName = new Date().getTime() + ".jpeg";
-    
+
     const newPhotos = [
       {
         filepath: fileName,
