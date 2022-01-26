@@ -5,11 +5,12 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
+import { RouteComponentProps } from "react-router";
 import { LeafletMap } from "../components/Leaflet";
 
 import "./Tab1.css";
 
-const Tab1: React.FC = () => {
+const Tab1: React.FC<RouteComponentProps> = () => {
   return (
     <IonPage>
       <IonHeader>
