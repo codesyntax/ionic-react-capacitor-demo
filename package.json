@@ -10,6 +10,7 @@
     "@capacitor/haptics": "1.1.4",
     "@capacitor/keyboard": "1.2.1",
     "@capacitor/status-bar": "1.0.7",
+    "@ionic/pwa-elements": "^3.1.1",
     "@ionic/react": "6.0.4-dev.1643056868.324d279",
     "@ionic/react-router": "6.0.4-dev.1643056868.324d279",
     "@testing-library/jest-dom": "^5.11.9",

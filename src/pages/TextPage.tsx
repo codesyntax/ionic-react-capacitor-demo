@@ -13,16 +13,11 @@ const TextPage: React.FC = () => {
   const URL = "https://mdn.github.io/beginner-html-site/";
   const [text, setText] = useState<string | null>(null);
   useEffect(() => {
-    console.log("TextPage.tsx: useEffect");
     fetch(URL)
       .then((res) => res.text())
-      .then((res) => {
-       setText(res);
-      }).catch(() => console.error("Can't connect to backend try latter"));
-
-    // setText(response.text());
+      .then((res) => setText(res))
+      .catch(() => console.error("Can't connect to backend try latter"));
   }, []);
-  console.log("TextPage.tsx without useEffect");
 
   return (
     <IonPage>

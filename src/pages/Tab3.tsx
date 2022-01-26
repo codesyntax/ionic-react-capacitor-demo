@@ -1,6 +1,7 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { RouteComponentProps } from 'react-router';
-import BrowserTab from '../native-components/browserTab';
+import NativeBrowserTab from '../native-components/NativeBrowserTab';
+import NativeCamera from '../native-components/NativeCamera';
 import './Tab3.css';
 
 const Tab3: React.FC <RouteComponentProps>= () => {
@@ -11,14 +12,14 @@ const Tab3: React.FC <RouteComponentProps>= () => {
           <IonTitle>Native</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
+      <IonContent fullscreen className="ion-text-center ion-padding">
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">Native</IonTitle>
           </IonToolbar>
         </IonHeader>
-        {/* <ExploreContainer name="Tab 3 page" /> */}
-        <BrowserTab />
+        <NativeBrowserTab />
+        <NativeCamera />
       </IonContent>
     </IonPage>
   );
