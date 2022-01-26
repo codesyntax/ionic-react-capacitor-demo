@@ -3,6 +3,7 @@ import {
   IonContent,
   IonHeader,
   IonLabel,
+  IonListHeader,
   IonPage,
   IonRouterOutlet,
   IonTitle,
@@ -16,39 +17,46 @@ import Reorder from "../components/Reorder/Reorder";
 import Form from "../components/Form/Form";
 
 import "./Tab2.css";
-import { Route } from "react-router";
-import TextPage from "./TextPage";
 import { RouteComponentProps } from "react-router";
-import { Link } from "react-router-dom";
 
-const Tab2: React.FC<RouteComponentProps>= ({match, history}) => {
-  return (<>
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Components</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent>
-      {/* <Link to="/tab2/test">User 1</Link> */}
-
-      <IonButton onClick={e => {
+const Tab2: React.FC<RouteComponentProps> = ({ match, history }) => {
+  return (
+    <>
+      <IonPage>
+        <IonHeader>
+          <IonToolbar>
+            <IonTitle>Components</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        <IonContent fullscreen>
+          <IonHeader collapse="condense">
+            <IonToolbar>
+              <IonTitle size="large">Components</IonTitle>
+            </IonToolbar>
+          </IonHeader>
+          {/* <Link to="/tab2/test">User 1</Link> */}
+          <IonListHeader mode="ios">
+            <IonLabel>Navigation</IonLabel>
+          </IonListHeader>
+          <IonButton
+            className="ion-padding-start"
+            onClick={(e) => {
               e.preventDefault();
-              history.push(match.url +'/test')
+              history.push(match.url + "/test");
               // history.push(''')
-            }}>
-              <IonLabel>User 3</IonLabel>
-            </IonButton>
-        <Refresher />
-        <DateTime />
-        <Reorder />
-        <Accordion />
-        <FabButton />
-        <Form />
-      </IonContent>
-    </IonPage>
-        
-        </>
+            }}
+          >
+            <IonLabel>Open inner HTML page</IonLabel>
+          </IonButton>
+          <Refresher />
+          <DateTime />
+          <Reorder />
+          <Accordion />
+          <FabButton />
+          <Form />
+        </IonContent>
+      </IonPage>
+    </>
   );
 };
 
