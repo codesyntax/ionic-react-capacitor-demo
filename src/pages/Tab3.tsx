@@ -4,7 +4,10 @@ import NativeBrowserTab from '../native-components/NativeBrowserTab';
 import NativeCamera from '../native-components/NativeCamera';
 import NativeClipboard from '../native-components/NativeClipboard';
 import NativeGeolocation from '../native-components/NativeGeolocation';
+import NativeScreenReader from '../native-components/NativeScreenReader';
 import NativeShare from '../native-components/NativeShare';
+import NativeDevice from '../native-components/NativeDevice';
+
 import './Tab3.css';
 
 const Tab3: React.FC <RouteComponentProps>= () => {
@@ -26,6 +29,8 @@ const Tab3: React.FC <RouteComponentProps>= () => {
         <NativeClipboard />
         <NativeShare />
         <NativeGeolocation />
+        <NativeScreenReader />
+        <NativeDevice />
       </IonContent>
     </IonPage>
   );
