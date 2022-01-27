@@ -21,7 +21,7 @@ export const routes_config: RouteInterface[] = [
         component: Tab2,
     },
     {
-        path: "/tab2/test",
+        path: "/tab2/:name",
         component: TextPage,
     },
     {

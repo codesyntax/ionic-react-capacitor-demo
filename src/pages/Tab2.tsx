@@ -1,11 +1,12 @@
 import {
   IonButton,
+  IonButtons,
   IonContent,
   IonHeader,
+  IonIcon,
   IonLabel,
   IonListHeader,
   IonPage,
-  IonRouterOutlet,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
@@ -15,17 +16,29 @@ import FabButton from "../components/FabButton/FabButton";
 import Refresher from "../components/Refresher/Refresher";
 import Reorder from "../components/Reorder/Reorder";
 import Form from "../components/Form/Form";
+import BreadCrumb from "../components/BreadCrumb/BreadCrumb";
 
+import { moonOutline, sunnyOutline } from "ionicons/icons";
 import "./Tab2.css";
 import { RouteComponentProps } from "react-router";
+import { useDarkMode } from "../hooks/useDarkMode";
 
 const Tab2: React.FC<RouteComponentProps> = ({ match, history }) => {
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
   return (
     <>
       <IonPage>
         <IonHeader>
           <IonToolbar>
             <IonTitle>Components</IonTitle>
+            <IonButtons slot="end">
+              <IonButton onClick={toggleDarkMode}>
+                <IonIcon
+                  slot="icon-only"
+                  icon={isDarkMode ? sunnyOutline : moonOutline}
+                />
+              </IonButton>
+            </IonButtons>
           </IonToolbar>
         </IonHeader>
         <IonContent fullscreen>
@@ -54,6 +67,7 @@ const Tab2: React.FC<RouteComponentProps> = ({ match, history }) => {
           <Accordion />
           <FabButton />
           <Form />
+          <BreadCrumb />
         </IonContent>
       </IonPage>
     </>
