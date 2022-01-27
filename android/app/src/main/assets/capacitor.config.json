@@ -1,0 +1,6 @@
+{
+	"appId": "com.codesyntax.ionicreactdemo",
+	"appName": "ionic-react-leaflet-demo",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}
