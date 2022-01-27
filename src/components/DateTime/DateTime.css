@@ -14,7 +14,7 @@
     height: 382px;
   }
 
-  ion-modal.date-time-modal + ion-popover{
+  /* ion-modal.date-time-modal + ion-popover{
     --offset-y: 330px !important;
     --offset-x: 50px;
-  }
+  } */
