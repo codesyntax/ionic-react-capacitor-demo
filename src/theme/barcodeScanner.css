@@ -1,0 +1,6 @@
+.scanner-ui { display: none; }
+
+body.qrscanner { background: transparent; }
+body.qrscanner ion-content > *:not(.scanner-ui) { display: none; }
+body.qrscanner ion-content { --background: transparent; }
+body.qrscanner .scanner-ui { display: block; }

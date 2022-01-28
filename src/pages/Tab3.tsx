@@ -8,6 +8,7 @@ import NativeShare from '../native-components/NativeShare';
 import NativeDevice from '../native-components/NativeDevice';
 
 import './Tab3.css';
+import NativeBarcodeScanner from '../native-components/NativeBarcodeScanner';
 
 const Tab3: React.FC <RouteComponentProps>= () => {
   return (
@@ -25,6 +26,7 @@ const Tab3: React.FC <RouteComponentProps>= () => {
         </IonHeader>
         <NativeBrowserTab />
         <NativeCamera />
+        <NativeBarcodeScanner />
         <NativeClipboard />
         <NativeShare />
         <NativeGeolocation />

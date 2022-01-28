@@ -33,6 +33,7 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+
 // import DynamicRoutes from "./DynamicRoutes";
 // import { routes_config } from "./routes_config";
 import TextPage from "./pages/TextPage";
