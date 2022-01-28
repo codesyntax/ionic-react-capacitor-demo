@@ -10,7 +10,20 @@ import { LatLngExpression } from 'leaflet';
 import { layerProps, MAP_LAYERS } from '../../constants';
 import 'leaflet/dist/leaflet.css';
 
+
+import L from 'leaflet';
+
+import icon from 'leaflet/dist/images/marker-icon.png';
+import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 const LeafletMap = () => {
+  let DefaultIcon = L.icon({
+    iconUrl: icon,
+    shadowUrl: iconShadow,
+    iconAnchor: [12, 20],
+    popupAnchor: [1, -15],
+  });
+  L.Marker.prototype.options.icon = DefaultIcon;
+
   const position: LatLngExpression = [43.1936281, -2.4590197];
   const [openLayerModal, setOpenLayerModal] = useState(false);
   const [activeLayer, setActiveLayer] = useState<layerProps>(MAP_LAYERS[0]);
