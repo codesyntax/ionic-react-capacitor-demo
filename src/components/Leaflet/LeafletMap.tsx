@@ -8,6 +8,7 @@ import TileLayerModal from './TileLayerModal';
 import DynamicTileLayer from './DynamicTileLayer';
 import { LatLngExpression } from 'leaflet';
 import { layerProps, MAP_LAYERS } from '../../constants';
+import 'leaflet/dist/leaflet.css';
 
 const LeafletMap = () => {
   const position: LatLngExpression = [43.1936281, -2.4590197];

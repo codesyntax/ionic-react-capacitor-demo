@@ -6,7 +6,7 @@
 
 .leaflet-touch .leaflet-control-layers,
 .leaflet-touch .leaflet-bar {
-    border: 0px;
+    border: 0px !important;
 }
 
 .leaflet-touch .leaflet-bar a:first-child {
@@ -15,7 +15,7 @@
 .leaflet-touch .leaflet-bar a {
     width: 40px;
     height: 40px;
-    line-height: 39px;
+    line-height: 26px;
     border-radius: 50% !important;
     background-color: var(--ion-color-light);
     color: var(--ion-color-dark);
