@@ -1,36 +1,85 @@
-import { useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import {
   BarcodeScanner,
   ScanResult,
 } from "@capacitor-community/barcode-scanner";
 import { useIonAlert } from "@ionic/react";
+import ReactDOM from "react-dom";
+import "./barcodeScanner.css";
+
+export const BarcodeScannerInterface: React.FC<{ children?: ReactNode }> = ({
+  children,
+}) => {
+  const [barcodeScannerDOM, setBarcodeScannerDOM] = useState<Element | null>(
+    null
+  );
+
+  useEffect(() => {
+    const template = document.createElement("div");
+    template.id = "barcode-scanner-layout-root";
+    document.body.appendChild(template);
+    const modalRoot: Element | null = document.getElementById(
+      "barcode-scanner-layout-root"
+    );
+    setBarcodeScannerDOM(modalRoot);
+
+    return () => {
+      modalRoot && modalRoot.remove();
+    };
+  }, []);
+
+  return (
+    barcodeScannerDOM &&
+    ReactDOM.createPortal(
+      <>
+        <div id="frame-content">
+          <div></div>
+        </div>
+        {children}
+      </>,
+      barcodeScannerDOM
+    )
+  );
+};
 
 export function useBarcodeScanner() {
   const [barcodeScanner, setBarcodeScanner] = useState<ScanResult>();
   const [permission, setPermission] = useState<boolean>();
+  const [isOpened, setIsOpened] = useState<boolean>(false);
+
   const [present] = useIonAlert();
 
-  console.log("useBarcodeScanner");
-  // console.log("result", BarcodeScanner.startScan());
+  // UseEffect to add/remove style to Portal
+  useEffect(() => {
+    const root = document.getElementById("root");
+    if (isOpened) {
+      if (root) {
+        root.style.display = "none";
+        document.body.style.background = "transparent";
+      }
+    } else {
+      root?.removeAttribute("style");
+      document.body.removeAttribute("style");
+    }
+  }, [isOpened]);
 
   const startScan = async () => {
     const permission = await checkPermission();
     if (permission) {
-      document.body.classList.add("qrscanner");
-      BarcodeScanner.hideBackground(); // make background of WebView transparent
-      // document.body.style.display = "none";
-      try {
-        const result = await BarcodeScanner.startScan(); // start scanning and wait for a result
-        // document.body.style.display = "block";
-    document.body.classList.remove("qrscanner");
      
+      BarcodeScanner.hideBackground(); // make background of WebView transparent
+      try {
+        setIsOpened(true);
+        const result = await BarcodeScanner.startScan();
+
         // if the result has content
         if (result.hasContent) {
           setBarcodeScanner(result);
-
+          setIsOpened(false);
           console.log(result.content); // log the raw scanned content
         }
       } catch (e) {
+        setIsOpened(false);
         console.error(e);
       }
     } else {
@@ -68,7 +117,8 @@ export function useBarcodeScanner() {
   const stopScan = () => {
     BarcodeScanner.showBackground();
     BarcodeScanner.stopScan();
-    document.body.classList.remove("qrscanner");
+    setIsOpened(false);
+    // document.body.classList.remove("qrscanner");
     // document.body.style.display = "block";
   };
   return {
@@ -78,5 +128,7 @@ export function useBarcodeScanner() {
     checkPermission,
     prepare,
     stopScan,
+    BarcodeScannerInterface,
+    isOpened,
   };
 }
