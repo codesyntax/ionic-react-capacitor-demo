@@ -4,3 +4,43 @@ body.qrscanner { background: transparent; }
 body.qrscanner ion-content > *:not(.scanner-ui) { display: none; }
 body.qrscanner ion-content { --background: transparent; }
 body.qrscanner .scanner-ui { display: block; }
+
+
+#frame-content:before, 
+#frame-content:after, 
+#frame-content>:last-child:before, 
+#frame-content>:last-child:after {
+    position: absolute;
+    width: 60px; 
+    height: 50px;
+    border-color: white; 
+    border-style: solid;
+    content: ' ';
+}
+
+#frame-content:before {
+    top: 30%;
+    left: 15%;
+    border-width: 1px 0 0 1px
+}
+
+#frame-content:after {
+    top: 30%;
+    right: 15%;
+    border-width: 1px 1px 0 0
+}
+
+#frame-content>:last-child:before {
+    bottom: 30%;
+    right: 15%;     
+    border-width: 0 1px 1px 0
+}
+
+#frame-content>:last-child:after {
+    bottom: 30%;
+    left: 15%;
+    border-width: 0 0 1px 1px
+}
+#frame-content #frame-message{
+ bottom: 30%;
+};

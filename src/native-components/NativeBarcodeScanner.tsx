@@ -1,12 +1,7 @@
-import {
-  IonButton,
-  IonFab,
-  IonFabButton,
-  IonIcon,
-} from "@ionic/react";
+import { IonButton, IonFab, IonFabButton, IonIcon } from "@ionic/react";
 import { scanOutline, closeCircleOutline } from "ionicons/icons";
 import { useBarcodeScanner } from "../hooks/useBarcodeScanner";
-import '../theme/barcodeScanner.css';
+import "../theme/barcodeScanner.css";
 
 const NativeBarcodeScanner: React.FC = () => {
   const { barcodeScanner, startScan, checkPermission, stopScan } =
@@ -19,11 +14,21 @@ const NativeBarcodeScanner: React.FC = () => {
         Barcode Scanner
       </IonButton>
       <div className="scanner-ui">
-      <IonFab vertical="top" horizontal="end" slot="fixed" style={{top: '65px'}}>
-        <IonFabButton onClick={stopScan} color="light">
-          <IonIcon icon={closeCircleOutline}></IonIcon>
-        </IonFabButton>
-      </IonFab>
+        <IonFab
+          vertical="top"
+          horizontal="end"
+          slot="fixed"
+          style={{ top: "65px" }}
+        >
+          <IonFabButton onClick={stopScan} color="light">
+            <IonIcon icon={closeCircleOutline}></IonIcon>
+          </IonFabButton>
+        </IonFab>
+
+        <div id="frame-content">
+          <div></div>
+        </div>
+          {/* <h2 id="frame-message">This is some content</h2> */}
       </div>
       {barcodeScanner && <p>{barcodeScanner.content}</p>}
     </>
