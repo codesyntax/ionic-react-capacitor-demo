@@ -1,7 +1,8 @@
 {
-  "name": "ionic-react-leaflet-demo",
+  "name": "ionic-react-capacitor-demo",
   "version": "0.0.1",
   "private": true,
+  "homepage":"https://codesyntax.github.io/ionic-react-capacitor-demo",
   "dependencies": {
     "@capacitor-community/barcode-scanner": "^2.1.0-alpha.0",
     "@capacitor/android": "3.4.0",
@@ -56,7 +57,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "ionic build --prod",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -78,7 +81,8 @@
   },
   "devDependencies": {
     "@capacitor/cli": "3.3.3",
-    "@types/leaflet": "^1.7.8"
+    "@types/leaflet": "^1.7.8",
+    "gh-pages": "^3.2.3"
   },
   "description": "An Ionic project"
 }
