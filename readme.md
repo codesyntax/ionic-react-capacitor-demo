@@ -1,5 +1,11 @@
 # Ionic React Capacitor Demo
 ## A series of front-end and native integration tests with Ionic React.
+
+**Online demo:** https://ionic-react-capacitor-demo.netlify.app/
+
+**APK:** [Download](https://github.com/codesyntax/ionic-react-capacitor-demo/releases/download/2.0/ionic-react-capacitor-demo.apk)
+
+
 The demos are divided into three tabs.
 1. Leaflet map.
 2. [UI components](https://ionicframework.com/docs/components).
