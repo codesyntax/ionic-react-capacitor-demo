@@ -1,6 +1,5 @@
 import { IonFab, IonFabButton, IonIcon } from '@ionic/react';
 import { MapContainer, Marker, Popup } from 'react-leaflet';
-import './leaflet.css';
 import { layersOutline } from 'ionicons/icons';
 import { useState } from 'react';
 
@@ -9,6 +8,7 @@ import DynamicTileLayer from './DynamicTileLayer';
 import { LatLngExpression } from 'leaflet';
 import { layerProps, MAP_LAYERS } from '../../constants';
 import 'leaflet/dist/leaflet.css';
+import './leaflet_style.css';
 
 
 import L from 'leaflet';
@@ -29,7 +29,7 @@ const LeafletMap = () => {
   const [activeLayer, setActiveLayer] = useState<layerProps>(MAP_LAYERS[0]);
   return (
     <>
-      <MapContainer center={position} zoom={10} scrollWheelZoom={true} className="map">
+      <MapContainer center={position} zoom={10} scrollWheelZoom={true} id="map">
         <DynamicTileLayer layerId={activeLayer.id} />
 
         <Marker position={position}>
