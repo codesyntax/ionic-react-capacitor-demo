@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package com.codesyntax.ionicreactdemo;
 
 import com.getcapacitor.BridgeActivity;
 

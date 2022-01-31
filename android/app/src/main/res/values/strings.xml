@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">ionic-react-leaflet-demo</string>
     <string name="title_activity_main">ionic-react-leaflet-demo</string>
-    <string name="package_name">io.ionic.starter</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="package_name">com.codeyntax.ionicreactdemo</string>
+    <string name="custom_url_scheme">com.codeyntax.ionicreactdemo</string>
 </resources>

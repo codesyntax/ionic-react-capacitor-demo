@@ -26,3 +26,7 @@ yarn-error.log*
 
 # Optional eslint cache
 .eslintcache
+
+# Keystore files
+*.jks
+*.keystore
